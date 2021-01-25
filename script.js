@@ -1,7 +1,7 @@
 var started = false;
 var timer;
 var speed = 250
-var row = 25;
+var row = 23;
 var col = 25;
 var cur = [row]
 var next = [row]
@@ -140,6 +140,23 @@ function multievolve(){
 
 }
 
+function resetcur(){
+  for (var y = 0; row > y; y += 1) {
+    for (var x = 0; col > x; x += 1) {
+      cur[y][x] = next[y][x];
+      next[y][x] = 0;
+       var cell = document.getElementById(y + '_' + x);
+        cell.setAttribute('class','dead')
+
+        if (cur[y][x] == 1){
+          cur[r][c] = 0
+          evolve()
+
+        }
+    }
+  }
+  return(true)
+}
 
   window.onload = () => {
     createworld()
