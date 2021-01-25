@@ -158,6 +158,7 @@ function resetcur(){
   return(true)
 }
 
+   
   window.onload = () => {
     createworld()
     listgen()
